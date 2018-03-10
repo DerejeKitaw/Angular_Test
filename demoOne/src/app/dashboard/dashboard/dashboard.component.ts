@@ -1,4 +1,9 @@
+// #docregion
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Hero } from '../../hero/hero';
+import { HeroService } from '../../hero/hero.service';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +11,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  heroes: Hero[] = [];
 
-  constructor() { }
+  // #docregion ctor
+  constructor(private router: Router, private heroService: HeroService) {}
+  // #enddocregion ctor
 
   ngOnInit() {
+    this.heroService
+      .getHeroes()
+      .subscribe(heroes => (this.heroes = heroes.slice(1, 5)));
   }
 
+  // #docregion goto-detail
+  gotoDetail(hero: Hero) {
+    const url = `/heroes/${hero.id}`;
+    this.router.navigateByUrl(url);
+  }
+  // #enddocregion goto-detail
+
+  get title() {
+    const cnt = this.heroes.length;
+    return cnt === 0
+      ? 'No Heroes'
+      : cnt === 1 ? 'Top Hero' : `Top ${cnt} Heroes`;
+  }
 }

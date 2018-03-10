@@ -14,6 +14,8 @@ import { InMemoryDataService } from './in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { TwainService } from './twain/twain.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HeroService } from './hero/hero.service';
+import { UserService } from './shared/user.service';
 
 @NgModule({
   imports: [
@@ -36,7 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
     WelcomeComponent,
     TwainComponent
   ],
-  providers: [TwainService],
+  providers: [HeroService,
+    TwainService,
+    UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
