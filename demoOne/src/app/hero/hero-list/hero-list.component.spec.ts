@@ -12,7 +12,7 @@ import { DebugElement } from '@angular/core';
 import { Router } from '@angular/router';
 import { getTestHeroes, TestHeroService } from '../../model/testing/test-hero.service';
 import { HeroListComponent } from './hero-list.component';
-import { addMatchers, newEvent } from '../../../../testing';
+import {  newEvent } from '../../../../testing';
 import { HeroModule } from '../hero.module';
 import { HeroService } from '../hero.service';
 import { HighlightDirective } from '../../shared/highlight.directive';
@@ -31,7 +31,7 @@ let page: Page;
 describe('HeroListComponent', () => {
   beforeEach(
     async(() => {
-      addMatchers();
+      // addMatchers();
       const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
 
       TestBed.configureTestingModule({

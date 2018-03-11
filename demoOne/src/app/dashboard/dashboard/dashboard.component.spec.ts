@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 
 
-beforeEach(addMatchers);
+// beforeEach(addMatchers);
 
 let comp: DashboardComponent;
 let fixture: ComponentFixture<DashboardComponent>;
@@ -42,7 +42,7 @@ describe('DashboardComponent (deep)', () => {
 ////////  Shallow ////////////////
 
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { addMatchers, click, asyncData } from '../../../../testing';
+import {  click, asyncData } from '../../../../testing';
 import { DashboardModule } from '../dashboard.module';
 import { HeroService } from '../../hero/hero.service';
 import { getTestHeroes } from '../../model/testing/test-heroes';

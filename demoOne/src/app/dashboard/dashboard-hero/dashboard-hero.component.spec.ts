@@ -8,7 +8,7 @@ import { DebugElement } from '@angular/core';
 
 import { DashboardHeroComponent } from './dashboard-hero.component';
 
-beforeEach( addMatchers );
+// beforeEach( addMatchers );
 
 describe('DashboardHeroComponent class only', () => {
   // #docregion class-only
@@ -144,7 +144,7 @@ describe('DashboardHeroComponent when inside a test host', () => {
 
 ////// Test Host Component //////
 import { Component } from '@angular/core';
-import { addMatchers, click } from '../../../../testing';
+import {  click } from '../../../../testing';
 import { Hero } from '../../hero/hero';
 
 // #docregion test-host

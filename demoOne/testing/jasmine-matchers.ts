@@ -3,11 +3,11 @@
 ////  Jasmine Custom Matchers ////
 // Be sure to extend jasmine-matchers.d.ts when adding matchers
 
-export function addMatchers(): void {
-  jasmine.addMatchers({
-    toHaveText: toHaveText
-  });
-}
+// export function addMatchers(): void {
+//   jasmine.addMatchers({
+//     toHaveText: toHaveText
+//   });
+// }
 
 function toHaveText(): jasmine.CustomMatcher {
   return {
